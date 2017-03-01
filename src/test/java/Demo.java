@@ -36,8 +36,10 @@ public class Demo extends ClassLoader{
         Demo loader = new Demo();
         Class hw = loader.defineClass("test.java.Demo$Bazhang", code, 0, code.length);
         Object o = hw.newInstance();
-        Method method = o.getClass().getMethod("newFunc1", String.class);
-        method.invoke(o, "巴掌菜比");
+        Method method1 = o.getClass().getMethod("newFunc1", String.class);
+        method1.invoke(o, "巴掌菜比");
+        Method method2 = o.getClass().getMethod("newFunc2", String.class);
+        method2.invoke(o, "巴掌菜比22");
     }
 
     public static class Bazhang {
@@ -50,6 +52,18 @@ public class Demo extends ClassLoader{
                     System.out.println(i);
                 }
                 if (i == 50) {
+                    return;
+                }
+            }
+        }
+
+        public void newFunc2(String str) {
+            System.out.println(str);
+            for (int i = 0; i < 100; i++) {
+                if (i % 8 == 0) {
+                    System.out.println(i);
+                }
+                if (i > 50) {
                     return;
                 }
             }
