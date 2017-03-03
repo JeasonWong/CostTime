@@ -1,0 +1,16 @@
+apply plugin: 'groovy'
+
+dependencies {
+  compile gradleApi()
+  compile localGroovy()
+  compile 'com.android.tools.build:gradle:2.2.2'
+//  compile 'me.wangyuwei:CostTime:1.0.1'
+}
+
+repositories {
+  jcenter()
+//  maven {
+//    url 'https://dl.bintray.com/wangyuwei/maven'
+//  }
+}
+
