@@ -11,6 +11,10 @@ public class Demo {
 
   @Cost
   public String getName() {
+    int a = 1;
+    int b = 2;
+    a -= b;
+
     return "巴掌";
   }
 
