@@ -59,18 +59,18 @@ public class CostTimePlugin extends Transform implements Plugin<Project> {
 
               println name + ' is changing...'
 
-              ClassReader cr = new ClassReader(file.bytes);
-              ClassWriter cw = new ClassWriter(cr, ClassWriter.COMPUTE_MAXS);
-              ClassVisitor cv = new CostClassVisitor(cw);
+              ClassReader cr = new ClassReader(file.bytes)
+              ClassWriter cw = new ClassWriter(cr, ClassWriter.COMPUTE_MAXS)
+              ClassVisitor cv = new CostClassVisitor(cw)
 
-              cr.accept(cv, EXPAND_FRAMES);
+              cr.accept(cv, EXPAND_FRAMES)
 
-              byte[] code = cw.toByteArray();
+              byte[] code = cw.toByteArray()
 
               FileOutputStream fos = new FileOutputStream(
-                  file.parentFile.absolutePath + File.separator + name);
-              fos.write(code);
-              fos.close();
+                  file.parentFile.absolutePath + File.separator + name)
+              fos.write(code)
+              fos.close()
             }
           }
         }

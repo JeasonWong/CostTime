@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
   @Cost
   public void show() {
     for (int i = 0; i < 100; i++) {
-      
+
     }
   }
 }
